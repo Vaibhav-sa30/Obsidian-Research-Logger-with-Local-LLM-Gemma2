@@ -16,6 +16,18 @@ graph TD
     G --> H[Show Centered Green Toast]
 ```
 
+```mermaid
+graph TD
+    A[Highlight Text in any App] -->|Press F9| B(Capture Engine)
+    B -->|Text, URL, Window Title| C[Gemma 2:2b]
+    C -->{Note exists} |No| D[Create Note] --> E[Append to Note]
+    C -->|Yes| E[Append to Note]
+    D --> F[Obsidian Vault]
+    E --> F[Obsidian Vault]
+    F --> G[Update _Logger History.md]
+    G --> H[Show Centered Green Toast]
+```
+
 ![Aesthetic Notification](https://img.shields.io/badge/UI-Centered%20Green-green?style=flat-square)
 ![Local LLM](https://img.shields.io/badge/LLM-Gemma%202:2b-blue?style=flat-square)
 ![Privacy](https://img.shields.io/badge/Privacy-100%25%20Local-orange?style=flat-square)
