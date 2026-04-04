@@ -3,6 +3,7 @@
 ![Aesthetic Notification](https://img.shields.io/badge/UI-Centered%20Green-green?style=flat-square)
 ![Local LLM](https://img.shields.io/badge/LLM-Gemma%202:2b-blue?style=flat-square)
 ![Privacy](https://img.shields.io/badge/Privacy-100%25%20Local-orange?style=flat-square)
+
 A local, privacy-first AI research assistant that automates logging highlighted text from any application (PDFs, Browser, E-books) directly into your Obsidian vault. Powered by **Gemma 2:2b** via Ollama.
 
 ## How it Works
