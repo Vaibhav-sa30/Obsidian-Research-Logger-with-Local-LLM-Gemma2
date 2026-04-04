@@ -19,4 +19,5 @@ _Logger History.md
 *.log
 
 .gitignore
-assets
+assets/
+.assets/
