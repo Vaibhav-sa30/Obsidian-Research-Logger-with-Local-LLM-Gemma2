@@ -7,20 +7,13 @@ A local, privacy-first AI research assistant that automates logging highlighted 
 ```mermaid
 graph TD
     A[Highlight Text in any App] -->|Press F9| B(Capture Engine)
-    B -->|Text, URL, Window Title| C{Gemma 2:2b Router}
-    
-    C -->|New Topic| D[Create New Note]
-    C -->|Existing Topic| E[Find Existing Note]
-    
-    D --> F[Synthesize & Format Content]
-    E --> F
-    
-    F --> G[Save to Obsidian Vault]
-    G --> H[Update _Logger History.md]
-    H --> I[Show Centered Green Toast]
-
-    style C fill:#f9f,stroke:#333,stroke-width:2px
-    style I fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+    B -->|Text, URL, Window Title| C{Gemma 2:2b}
+    C -->|New Note| D[Create Note]
+    C -->|Existing Note| E[Append to Note]
+    D --> F[Obsidian Vault]
+    E --> F[Obsidian Vault]
+    F --> G[Update _Logger History.md]
+    G --> H[Show Centered Green Toast]
 ```
 
 ![Aesthetic Notification](https://img.shields.io/badge/UI-Centered%20Green-green?style=flat-square)
