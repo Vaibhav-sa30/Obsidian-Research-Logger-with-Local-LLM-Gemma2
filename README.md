@@ -4,9 +4,17 @@ A local, privacy-first AI research assistant that automates logging highlighted 
 
 ## 🗺️ How it Works
 
-![Workflow Diagram](assets/workflow_diagram.png)
-
-*The logic flow: Highlight → F9 → Gemma 2 Processing → Obsidian Sync → Centered Notification.*
+```mermaid
+graph TD
+    A[Highlight Text in any App] -->|Press F9| B(Capture Engine)
+    B -->|Text, URL, Window Title| C{Gemma 2:2b}
+    C -->|New Note| D[Create Note]
+    C -->|Existing Note| E[Append to Note]
+    D --> F[Obsidian Vault]
+    E --> F[Obsidian Vault]
+    F --> G[Update _Logger History.md]
+    G --> H[Show Centered Green Toast]
+```
 
 ![Aesthetic Notification](https://img.shields.io/badge/UI-Centered%20Green-green?style=flat-square)
 ![Local LLM](https://img.shields.io/badge/LLM-Gemma%202:2b-blue?style=flat-square)
