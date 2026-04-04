@@ -2,7 +2,7 @@
 
 A local, privacy-first AI research assistant that automates logging highlighted text from any application (PDFs, Browser, E-books) directly into your Obsidian vault. Powered by **Gemma 2:2b** via Ollama.
 
-## 🗺️ How it Works
+## How it Works
 
 ```mermaid
 graph TD
