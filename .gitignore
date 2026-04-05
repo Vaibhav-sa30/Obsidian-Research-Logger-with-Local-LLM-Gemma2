@@ -17,6 +17,7 @@ Thumbs.db
 # Project specific
 _Logger History.md
 *.log
+.env
 
 .gitignore
 assets/

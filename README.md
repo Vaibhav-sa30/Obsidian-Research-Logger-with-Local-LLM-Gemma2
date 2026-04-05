@@ -61,9 +61,11 @@ pip install -r requirements.txt
 ```
 
 ### 4. Configuration
-Open `vault_manager.py` and update the `VAULT_PATH` to point to your Obsidian vault:
-```python
-VAULT_PATH = r"C:\Path\To\Your\Obsidian\Vault"
+Create a `.env` file in the root directory (you can copy `.env.example`) and add your Obsidian vault path:
+```bash
+cp .env.example .env
+# Open .env and set:
+OBSIDIAN_VAULT_PATH="C:\Path\To\Your\Vault"
 ```
 
 ---
