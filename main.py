@@ -59,7 +59,7 @@ def trigger_logging():
     
     # Append Metadata reliably in Python
     url_line = f" | **URL:** {url}" if url else ""
-    metadata_footer = f"\n\n-- ---\n> **Source:** {window_title}{url_line} | **Captured on:** {timestamp}"
+    metadata_footer = f"\n\n---\n> **Source:** {window_title}{url_line} | **Captured on:** {timestamp}"
     formatted_content += metadata_footer
     
     # 3. Save to Vault

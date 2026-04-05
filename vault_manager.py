@@ -5,7 +5,10 @@ from dotenv import load_dotenv
 # Load configuration from .env file
 load_dotenv()
 
-VAULT_PATH = os.getenv("OBSIDIAN_VAULT_PATH", r"C:\Users\vaibh\OneDrive\Documents\Obsidian Vault\Zettelkasten (Notes)")
+VAULT_PATH = os.getenv("OBSIDIAN_VAULT_PATH")
+
+if not VAULT_PATH:
+    print("WARNING: OBSIDIAN_VAULT_PATH not set in .env! Logging will fail.")
 
 def list_notes():
     """Returns a list of all markdown filenames in the vault, without extension."""
