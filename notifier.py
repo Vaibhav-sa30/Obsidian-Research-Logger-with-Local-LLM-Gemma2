@@ -2,9 +2,9 @@ import tkinter as tk
 from threading import Thread
 import time
 
-def show_toast(message, duration=3.0):
+def show_toast(message, title="LOGGED TO VAULT", icon="✅", duration=3.0):
     """
-    Displays a premium, centered green toast notification.
+    Displays a premium, centered toast notification.
     """
     def create_window():
         root = tk.Tk()
@@ -12,26 +12,29 @@ def show_toast(message, duration=3.0):
         root.attributes("-topmost", True)
         root.attributes("-alpha", 0.0)
         
-        # Premium Green Styling
-        bg_color = "#121212" # Even deeper charcoal
-        accent_color = "#4CAF50" # Modern Green
+        # Premium Green/Charcoal Styling
+        bg_color = "#121212"
+        accent_color = "#4CAF50" # Green
+        if icon == "🧠": accent_color = "#2196F3" # Blue for thinking
+        if icon == "❌": accent_color = "#F44336" # Red for error
+        
         text_color = "#FFFFFF"
         
         root.configure(bg=bg_color)
         
         main_frame = tk.Frame(root, bg=bg_color, highlightbackground=accent_color, highlightthickness=1)
         main_frame.pack(fill="both", expand=True)
-
+        
         accent_bar = tk.Frame(main_frame, bg=accent_color, width=4)
         accent_bar.pack(side="left", fill="y")
-
+        
         content_frame = tk.Frame(main_frame, bg=bg_color, padx=25, pady=15)
         content_frame.pack(side="left", fill="both", expand=True)
 
-        icon_label = tk.Label(content_frame, text="✅", fg=text_color, bg=bg_color, font=("Segoe UI Emoji", 16))
+        icon_label = tk.Label(content_frame, text=icon, fg=text_color, bg=bg_color, font=("Segoe UI Emoji", 16))
         icon_label.grid(row=0, column=0, rowspan=2, padx=(0, 15))
 
-        title_label = tk.Label(content_frame, text="LOGGED TO VAULT", fg=accent_color, bg=bg_color, font=("Segoe UI", 9, "bold"))
+        title_label = tk.Label(content_frame, text=title.upper(), fg=accent_color, bg=bg_color, font=("Segoe UI", 9, "bold"))
         title_label.grid(row=0, column=1, sticky="w")
 
         msg_label = tk.Label(content_frame, text=message, fg=text_color, bg=bg_color, font=("Segoe UI Variable Small", 11))

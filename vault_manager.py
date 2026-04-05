@@ -32,21 +32,14 @@ def append_to_note(topic_name, content):
         name, _ = os.path.splitext(basename)
         if name.lower() == topic_name.lower():
             with open(filepath, 'a', encoding='utf-8') as f:
-                f.write(f"\n\n---\n\n{content}\n")
-            return f"Appended to existing note: {name}"
-    
-    # Fallback if not found but LLM decided it
-    return create_note(topic_name, content)
-
-def create_note(topic_name, content):
-    """Creates a new note in the root of the vault."""
-    # Ensure invalid filesystem characters are removed from the topic
-    safe_topic = "".join(c for c in topic_name if c.isalnum() or c in (' ', '-', '_')).strip()
-    
-    filepath = os.path.join(VAULT_PATH, f"{safe_topic}.md")
-    with open(filepath, 'w', encoding='utf-8') as f:
-        f.write(f"# {topic_name}\n\n{content}\n")
-    return f"Created new note: {safe_topic}"
+    path = resolve_topic_path(topic)
+    try:
+        with open(path, "a", encoding="utf-8") as f:
+            f.write(f"\n\n{content}\n")
+        return True
+    except Exception as e:
+        print(f"Error appending to note: {e}")
+        return False
 
 def log_to_history(timestamp, topic, summary, source_window, url=None):
     """Maintains a chronological log of all captures in _Logger History.md."""

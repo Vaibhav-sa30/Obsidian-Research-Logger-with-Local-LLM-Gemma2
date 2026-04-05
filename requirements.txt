@@ -3,5 +3,5 @@ pyperclip==1.8.2
 ollama==0.1.8
 pygetwindow==0.0.9
 uiautomation==2.0.18
-watchdog==3.0.0
+watchdog>=4.0.0
 python-dotenv
